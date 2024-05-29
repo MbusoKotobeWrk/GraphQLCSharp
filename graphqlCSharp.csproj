@@ -7,10 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate" Version="14.0.0-p.100" />
-    <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.5" />
   </ItemGroup>
 
 </Project>

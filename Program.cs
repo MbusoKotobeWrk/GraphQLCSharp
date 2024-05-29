@@ -1,20 +1,16 @@
-using HotChocolate.AspNetCore;
-using HotChocolate.;
+
+using GraphQlCSharp;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.AddGraphQLServer().AddQueryType<Query>();
+builder.Services.AddGraphQLServer().AddQueryType<Query>();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseRouting().UseEndpoints(options => options.MapGraphQL());
 
 app.UseHttpsRedirection();
 app.Run();
+
+public record Author(String Name);
+public record Book(String Title, Author Author);
+
